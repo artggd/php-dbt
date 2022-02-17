@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^3.3"
+    },
+    "bin": [
+        "phpdbt"
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

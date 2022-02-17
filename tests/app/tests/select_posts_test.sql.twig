@@ -1,0 +1,17 @@
+{# Testing @queries/select_posts.sql.twig #}
+
+{% set fixtures %}
+    INSERT INTO posts(id, title) VALUES (1, 'A first post');
+    INSERT INTO posts(id, title) VALUES (2, 'A second post');
+{% endset %}
+
+{% set expected %}
+    SELECT 2 AS post_nb;
+{% endset %}
+
+{{
+    db_test()
+        .given(fixtures)
+        .when(execute_query('@queries/select_posts.sql.twig'))
+        .then(assert_equals(expected))
+}}
