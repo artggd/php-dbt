@@ -68,7 +68,7 @@ final class Application
         );
 
         // @todo find and loop through test templates
-        $this->twig->render('@tests/select_posts_test.sql.twig');
+        $this->twig->render('@tests/count_posts_test.sql.twig');
 
         return 0;
     }
